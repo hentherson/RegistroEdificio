@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="7dp"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp"
+    tools:context=".EditarVisitante">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="17dp"
+        android:text="Editar Información"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editarNombreTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:hint="Nombre Completo"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+    <EditText
+        android:id="@+id/editarIdTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Documento de Identidad"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="161dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editarAptTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:ems="10"
+            android:hint="Apartamento"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+        <RadioGroup
+            android:id="@+id/editarTipoVisitanteRG"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo de visitante"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/editarFamiliaRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Familia"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/editarAmigoRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Amigo"
+                android:textColor="@color/black" />
+
+            <RadioButton
+                android:id="@+id/editarDomicilioRB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Domiciliario"
+                android:textColor="@color/black" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/confirmarBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:text="Confirmar"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
