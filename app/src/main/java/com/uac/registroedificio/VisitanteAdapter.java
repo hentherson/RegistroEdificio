@@ -1,5 +1,6 @@
 package com.uac.registroedificio;
 
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class VisitanteAdapter extends RecyclerView.Adapter<VisitanteAdapter.VisitanteViewHolder> implements Filterable {
+public class VisitanteAdapter extends RecyclerView.Adapter<VisitanteAdapter.VisitanteViewHolder> implements Filterable{
 
     private List<Visitante> listaVisitantes;
     private VisitanteListener vl;
@@ -53,6 +54,7 @@ public class VisitanteAdapter extends RecyclerView.Adapter<VisitanteAdapter.Visi
     public int getItemCount() {
         return listaVisitantes.size();
     }
+
 
     @Override
     public Filter getFilter() {
@@ -115,6 +117,17 @@ public class VisitanteAdapter extends RecyclerView.Adapter<VisitanteAdapter.Visi
             vl.itemSeleccionado(listaVisitantes.get(getLayoutPosition()));
         }
     }
+
+    public void actualizarLista(ArrayList<Visitante> newList) {
+        Log.i("NUEVA LISTA", newList.toString());
+
+        listaVisitantes = new ArrayList<>();
+        listaVisitantes.addAll(newList);
+
+
+        notifyDataSetChanged();
+    }
+
 
     public void eliminaVisitante(Visitante v) {
         this.listaVisitantes.remove(v);

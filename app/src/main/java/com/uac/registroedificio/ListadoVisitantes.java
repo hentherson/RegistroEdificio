@@ -66,8 +66,16 @@ public class ListadoVisitantes extends AppCompatActivity implements VisitanteLis
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                va.getFilter().filter(newText);
-                return false;
+               ArrayList<Visitante> nuevaLista = new ArrayList<>();
+               for (Visitante v : listadoVisitantes) {
+                   String apt = v.getApartamento();
+                   if (apt.contains(newText)) {
+                       nuevaLista.add(v);
+                   }
+               }
+
+               va.actualizarLista(nuevaLista);
+                return true;
             }
         });
 
@@ -89,7 +97,7 @@ public class ListadoVisitantes extends AppCompatActivity implements VisitanteLis
 
                 vc.eliminarVisitante(visitanteSeleccionado);
                 va.eliminaVisitante(visitanteSeleccionado);
-                Toast.makeText(this, "Visitante "+ visitanteSeleccionado +" Eliminado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Visitante "+ visitanteSeleccionado.getNombre() +" Eliminado", Toast.LENGTH_SHORT).show();
 
                 return  true;
         }
